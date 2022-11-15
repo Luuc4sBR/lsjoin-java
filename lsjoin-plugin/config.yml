@@ -1,0 +1,12 @@
+ 
+ActionBar:
+  Ativar: true
+  Mensagem-join: '&b&n%player%&e entrou no servidor'
+  Mensagem-quit: '&4&n%player%&c saiu do servidor'
+  
+Chat:
+  Ativar: true
+  Mensagem-join: '&eO jogador &b&n%player%&e entrou no servidor.'
+  Mensagem-quit: '&cO jogador &4&n%player%&c saiu do servidor.'
+ 
+ #Variável para chamar o nome do jogador: %player%
