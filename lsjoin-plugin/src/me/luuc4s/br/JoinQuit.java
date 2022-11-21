@@ -16,14 +16,14 @@ public class JoinQuit implements Listener {
 	
 	public static boolean ativarjoinac;
 	public static boolean ativarjoinch;
-
+		
+	ativarjoinac = Main.main.getConfig().getBoolean("ActionBar.Ativar");
+	ativarjoinch = Main.main.getConfig().getBoolean("Chat.Ativar");
+	
 	@EventHandler
 	public static void Entrar(PlayerJoinEvent j) {		
 				
 		Player p = j.getPlayer();
-			
-		ativarjoinac = Main.main.getConfig().getBoolean("ActionBar.Ativar");
-		ativarjoinch = Main.main.getConfig().getBoolean("Chat.Ativar");
 		
 		if (ativarjoinac == true) {
 			ActionBar.sendActionBarMessage(p, (Main.main.getConfig().getString("ActionBar.Mensagem-join").replace("&", "§").replace("%player%", p.getName())));
@@ -33,16 +33,12 @@ public class JoinQuit implements Listener {
 		} else {
 			j.setJoinMessage(null);
 			return;
-	}
-}
+		}}
 	
 	@EventHandler
 	public static void Sair(PlayerQuitEvent q) {
 		
 		Player p = q.getPlayer();
-		
-		ativarjoinac = Main.main.getConfig().getBoolean("ActionBar.Ativar");
-		ativarjoinch = Main.main.getConfig().getBoolean("Chat.Ativar");
 				
 		if (ativarjoinac == true) {
 			ActionBar.sendActionBarMessage(p, (Main.main.getConfig().getString("ActionBar.Mensagem-quit").replace("&", "§").replace("%player%", p.getName())));
@@ -52,6 +48,4 @@ public class JoinQuit implements Listener {
 		} else {
 			q.setQuitMessage(null);		
 			return;
-		}
-	}
-}	
+		}}}	
