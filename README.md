@@ -5,4 +5,4 @@
  Clique [aqui](https://www.youtube.com/watch?v=7nVjyXFV29s) para assistir a demonstração do vídeo.
  
 # Download
- Você pode estar baixando o plugin clicando [aqui](https://www.dropbox.com/s/l0pmnx7xitvo4vl/LsJoin.jar?dl=0).
+ Você pode estar baixando o plugin clicando [aqui](https://www.mediafire.com/file/jz1ev2ubma1jdx6/LsJoin.jar/file).
