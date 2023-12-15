@@ -1,17 +1,11 @@
 package me.luuc4s.br;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-
-import net.minecraft.server.v1_8_R3.IChatBaseComponent;
-import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
-import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
 
 public class JoinQuit implements Listener {
 
@@ -26,9 +20,10 @@ public class JoinQuit implements Listener {
 	@EventHandler
 	public static void Entrar(PlayerJoinEvent j) {
 
-		for (Player p : Bukkit.getOnlinePlayers()) {
+		for (Player onlinePlayers : Bukkit.getOnlinePlayers()) {
+			Player p = j.getPlayer();
 			if (ativarjoinac == true) {
-				ActionBar.sendActionBarMessage(p, (Main.main.getConfig().getString("ActionBar.Mensagem-join")
+				ActionBar.sendActionBarMessage(onlinePlayers, (Main.main.getConfig().getString("ActionBar.Mensagem-join")
 						.replace("&", "§").replace("%player%", p.getName())));
 			}
 			if (ativarjoinch == true) {
@@ -42,9 +37,10 @@ public class JoinQuit implements Listener {
 	@EventHandler
 	public static void Sair(PlayerQuitEvent q) {
 
-		for (Player p : Bukkit.getOnlinePlayers()) {
+		for (Player onlinePlayers : Bukkit.getOnlinePlayers()) {
+			Player p = q.getPlayer();
 			if (ativarjoinac == true) {
-				ActionBar.sendActionBarMessage(p, (Main.main.getConfig().getString("ActionBar.Mensagem-quit")
+				ActionBar.sendActionBarMessage(onlinePlayers, (Main.main.getConfig().getString("ActionBar.Mensagem-quit")
 						.replace("&", "§").replace("%player%", p.getName())));
 			}
 			if (ativarjoinch == true) {
